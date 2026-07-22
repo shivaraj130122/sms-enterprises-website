@@ -87,19 +87,21 @@ export default function Hero() {
             {/* CTAs */}
             <Reveal delay={0.4}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button variant="primary" size="lg" asChild>
-                  <Link href="/contact" className="group inline-flex items-center gap-2">
-                    Request a Survey
-                    <ArrowUpRight
-                      className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      strokeWidth={2}
-                    />
-                  </Link>
-                </Button>
+                <Button
+  href="/contact"
+  variant="primary"
+  size="lg"
+>
+  Request a Survey
+</Button>
 
-                <Button variant="secondary" size="lg" asChild>
-                  <Link href="/services">View Our Services</Link>
-                </Button>
+<Button
+  href="/services"
+  variant="secondary"
+  size="lg"
+>
+  View Our Services
+</Button>
               </div>
             </Reveal>
           </div>
