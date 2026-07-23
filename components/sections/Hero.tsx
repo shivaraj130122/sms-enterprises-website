@@ -12,27 +12,6 @@ import Reveal from "@/components/ui/Reveal";
 import HeroBackground from "../hero/HeroBackground";
 import CoordinateTicker from "../hero/CoordinateTicker";
 
-/**
- * NOTE ON ASSUMED COMPONENT APIS
- * -----------------------------------------------------------------------
- * Phase 1 components weren't available to inspect directly, so this file
- * assumes the following minimal, conventional shapes. If your actual
- * components differ, the fix is a one-line prop adjustment below —
- * nothing else in this file depends on their internals.
- *
- *   <Container>            children, className?
- *   <Button variant size>  variant: "primary" | "secondary" | "ghost"
- *                           size: "sm" | "md" | "lg"
- *                           asChild? (renders its child, e.g. a <Link>)
- *   <CornerFrame>           children, className?  — draws corner reticle
- *                           marks around its content (as its name implies)
- *   <Reveal delay?>         children — fades/slides children in on mount
- *                           or on scroll into view
- *
- * If any of these mismatch your real components, tell me and I'll adjust
- * this file only — the rest of the app stays untouched.
- */
-
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
@@ -53,7 +32,7 @@ export default function Hero() {
               <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-[#C6A15B]/25 bg-[#0B2340]/60 px-4 py-1.5 backdrop-blur-sm">
                 <Compass className="h-3.5 w-3.5 text-[#C6A15B]" strokeWidth={1.75} />
                 <span className="font-mono text-[11px] tracking-[0.22em] text-[#C9B27C]">
-                  LAND SURVEY &nbsp;·&nbsp; DEVELOPMENT &nbsp;·&nbsp; CIVIL ENGINEERING
+                  INFRASTRUCTURE DEVELOPMENT &nbsp;·&nbsp; LAYOUT PLANNING &nbsp;·&nbsp; CIVIL ENGINEERING
                 </span>
               </div>
             </Reveal>
@@ -65,43 +44,45 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
               className="font-display text-[13vw] font-semibold uppercase leading-[0.98] tracking-tight text-[#F5F3EC] sm:text-6xl md:text-7xl lg:text-[5.5rem]"
             >
-              Mapping
+              Building
               <br />
-              <span className="text-[#C6A15B]">ground truth.</span>
+              <span className="text-[#C6A15B]">infrastructure that</span>
               <br />
-              Building what
+              stands the
               <br />
-              lasts.
+              test of time.
             </motion.h1>
 
             {/* Tagline */}
             <Reveal delay={0.25}>
               <p className="mt-8 max-w-xl text-base leading-relaxed text-[#AEBBCE] sm:text-lg">
                 SMS Enterprises delivers the precision groundwork every
-                development stands on — GPS and drone survey, layout
-                planning, site demarcation, and construction survey,
-                engineered to civil-grade accuracy.
+                development stands on — layout planning, earthwork, road
+                formation, drainage construction, and civil engineering
+                works, engineered to construction-grade accuracy.
               </p>
             </Reveal>
 
             {/* CTAs */}
             <Reveal delay={0.4}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button
-  href="/contact"
-  variant="primary"
-  size="lg"
->
-  Request a Survey
-</Button>
+                <Link href="#contact">
+  <Button variant="primary" size="lg">
+    <span className="group inline-flex items-center gap-2">
+      Get a Free Quote
+      <ArrowUpRight
+        className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        strokeWidth={2}
+      />
+    </span>
+  </Button>
+</Link>
 
-<Button
-  href="/services"
-  variant="secondary"
-  size="lg"
->
-  View Our Services
-</Button>
+<Link href="#services">
+  <Button variant="secondary" size="lg">
+    View Our Services
+  </Button>
+</Link>
               </div>
             </Reveal>
           </div>

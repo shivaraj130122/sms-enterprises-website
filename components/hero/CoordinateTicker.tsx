@@ -3,18 +3,18 @@
 import { motion } from "framer-motion";
 
 const READOUTS = [
-  { label: "LAT", value: "12.9716° N" },
-  { label: "LONG", value: "77.5946° E" },
-  { label: "ACCURACY", value: "± 2 CM" },
-  { label: "STATUS", value: "SURVEY ACTIVE" },
+  { label: "SERVICE", value: "INFRASTRUCTURE DEVELOPMENT" },
+  { label: "WORK", value: "ROAD FORMATION" },
+  { label: "LOCATION", value: "BENGALURU, KARNATAKA" },
+  { label: "STATUS", value: "PROJECT IN PROGRESS" },
 ];
 
 /**
  * CoordinateTicker
  * -----------------------------------------------------------------------
  * A mono-spaced instrument readout, standing in for the numbered
- * "01 / 02 / 03" markers that don't apply here — this content is real
- * survey telemetry, not a sequence, so it reads left to right as data.
+ * "01 / 02 / 03" markers that don't apply here — this content reads as
+ * live project data, left to right, rather than a sequence.
  */
 export default function CoordinateTicker() {
   return (
